@@ -2,10 +2,11 @@ class Show < ActiveRecord::Base
 
   def self.highest_rating
     self.maximum(:rating)
-    #returns the TV show with the highest rating
   end
 
   def self.most_popular_show
+    show = self.maximum(:rating)
+    show.name
     #returns the tv show with the highest rating
   end
 
