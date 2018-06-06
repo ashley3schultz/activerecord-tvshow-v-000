@@ -9,10 +9,11 @@ class Show < ActiveRecord::Base
   end
 
   def self.lowest_rating
-    self.order(rating: :asc).first
+    self.minimum(:rating)
   end
 
   def self.least_popular_show
+    self.order(rating: :asc).first
     #returns the tv show with the lowest rating
   end
 
