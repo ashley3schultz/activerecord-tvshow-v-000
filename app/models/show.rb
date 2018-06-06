@@ -5,8 +5,8 @@ class Show < ActiveRecord::Base
   end
 
   def self.most_popular_show
-    show = self.maximum(:rating)
-    show.name
+    show = self.order(:rating :desc)
+    show.first.name
     #returns the tv show with the highest rating
   end
 
